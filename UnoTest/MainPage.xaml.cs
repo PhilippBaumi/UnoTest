@@ -1,5 +1,3 @@
-using Serilog.Sinks.File;
-
 namespace UnoTest;
 
 public sealed partial class MainPage : Page
@@ -16,7 +14,7 @@ public sealed partial class MainPage : Page
         string? date = ViewModel.SelectedText;
         if (date != null)
         {
-            await ShowDialog("Datum gewählt", "Du hast das Datum "+date+" gewählt");
+            await ShowDialog("Datum gewählt", "Du hast das Datum " + date + " gewählt");
             return;
         }
     }
@@ -29,10 +27,10 @@ public sealed partial class MainPage : Page
             await ShowDialog("Datum fehlt", "Du hast kein Datum gewählt");
             return;
         }
-        string sDate=date.ToString("dd.MM.yyyy");
+        string sDate = date.ToString("dd.MM.yyyy");
         if (ViewModel.Dates.Contains(sDate))
         {
-            await ShowDialog("Bereits vorhanden", "Das Datum "+sDate+" ist bereits in der Liste vorhanden");
+            await ShowDialog("Bereits vorhanden", "Das Datum " + sDate + " ist bereits in der Liste vorhanden");
             return;
         }
         ViewModel.Dates.Add(sDate);
@@ -44,8 +42,8 @@ public sealed partial class MainPage : Page
         {
             Title = title,
             Content = message,
-            CloseButtonText = "OK", 
-            XamlRoot=this.XamlRoot
+            CloseButtonText = "OK",
+            XamlRoot = this.XamlRoot
         };
         await dialog.ShowAsync();
     }

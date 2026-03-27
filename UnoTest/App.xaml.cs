@@ -1,5 +1,4 @@
 using System.Diagnostics.CodeAnalysis;
-using Uno.Resizetizer;
 
 namespace UnoTest;
 
@@ -71,8 +70,8 @@ public partial class App : Application
                 .UseHttp((context, services) =>
                 {
 #if DEBUG
-                // DelegatingHandler will be automatically injected
-                services.AddTransient<DelegatingHandler, DebugHttpHandler>();
+                    // DelegatingHandler will be automatically injected
+                    services.AddTransient<DelegatingHandler, DebugHttpHandler>();
 #endif
 
                 })

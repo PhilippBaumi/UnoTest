@@ -19,7 +19,7 @@ internal class ViewModel : INotifyPropertyChanged
         {
             if (selectedDate != value)
             {
-                selectedDate= value;
+                selectedDate = value;
                 OnPropertyChanged();
             }
         }
@@ -27,7 +27,7 @@ internal class ViewModel : INotifyPropertyChanged
 
     public string? SelectedText
     {
-        get=> selectedText;
+        get => selectedText;
         set
         {
             if (selectedText != value)
